@@ -3,11 +3,8 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import ApertureTransition from '$lib/components/ApertureTransition.svelte';
 	import FilmStrip from '$lib/components/FilmStrip.svelte';
-	import { page } from '$app/stores';
 
 	let { children } = $props();
-
-	let isHome = $derived($page.url.pathname === '/');
 </script>
 
 <svelte:head>
@@ -29,10 +26,8 @@
 
 <ApertureTransition />
 
-<div class={isHome ? 'pb-[72px]' : ''}>
+<div class="pb-[36px]">
 	{@render children()}
 </div>
 
-{#if isHome}
-	<FilmStrip />
-{/if}
+<FilmStrip />
