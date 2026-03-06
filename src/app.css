@@ -1,0 +1,66 @@
+@import 'tailwindcss';
+
+@theme {
+	--font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
+	--font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+	--font-body: 'Inter', system-ui, sans-serif;
+
+	--color-void: #0a0a0f;
+	--color-abyss: #12121a;
+	--color-surface: #1a1a2e;
+	--color-elevated: #25253d;
+
+	--color-neon-cyan: #00fff2;
+	--color-neon-magenta: #ff00e5;
+	--color-neon-yellow: #f0ff00;
+	--color-neon-orange: #ff6b00;
+	--color-neon-green: #39ff14;
+	--color-neon-purple: #bf00ff;
+
+	--color-ghost: #8888aa;
+	--color-whisper: #555577;
+	--color-chalk: #e0e0f0;
+}
+
+@layer base {
+	body {
+		background-color: var(--color-void);
+		color: var(--color-chalk);
+		font-family: var(--font-body);
+	}
+
+	::selection {
+		background-color: var(--color-neon-magenta);
+		color: var(--color-void);
+	}
+}
+
+@keyframes glitch-1 {
+	0%, 100% { clip-path: inset(20% 0 60% 0); transform: translate(-2px, 2px); }
+	25% { clip-path: inset(60% 0 10% 0); transform: translate(2px, -1px); }
+	50% { clip-path: inset(40% 0 30% 0); transform: translate(-1px, 1px); }
+	75% { clip-path: inset(10% 0 70% 0); transform: translate(1px, -2px); }
+}
+
+@keyframes glitch-2 {
+	0%, 100% { clip-path: inset(70% 0 5% 0); transform: translate(2px, -2px); }
+	25% { clip-path: inset(15% 0 55% 0); transform: translate(-2px, 1px); }
+	50% { clip-path: inset(50% 0 20% 0); transform: translate(1px, -1px); }
+	75% { clip-path: inset(5% 0 80% 0); transform: translate(-1px, 2px); }
+}
+
+@keyframes drift {
+	0%, 100% { transform: translateY(0) rotate(0deg); }
+	33% { transform: translateY(-10px) rotate(1deg); }
+	66% { transform: translateY(5px) rotate(-0.5deg); }
+}
+
+@keyframes pulse-glow {
+	0%, 100% { opacity: 0.4; }
+	50% { opacity: 1; }
+}
+
+@keyframes scan {
+	0% { transform: translateY(-100%); }
+	100% { transform: translateY(100vh); }
+}
