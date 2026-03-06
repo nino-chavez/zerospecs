@@ -193,3 +193,29 @@ export const stackData = {
 		databases: 5
 	}
 };
+
+export interface StackConnection {
+	from: string;
+	to: string;
+	projects: string[];
+}
+
+export const stackConnections: StackConnection[] = [
+	{ from: 'SvelteKit', to: 'Supabase', projects: ['Rally HQ', 'Gallery', 'AI Analyst Academy'] },
+	{ from: 'SvelteKit', to: 'Tailwind CSS v4', projects: ['Rally HQ', 'Gallery', 'ninochavez.co'] },
+	{ from: 'SvelteKit', to: 'Vercel', projects: ['Rally HQ', 'Gallery', 'ninochavez.co', 'AI Analyst Academy'] },
+	{ from: 'SvelteKit', to: 'Stripe', projects: ['Rally HQ'] },
+	{ from: 'Next.js', to: 'Supabase', projects: ["Let's Pepper"] },
+	{ from: 'Next.js', to: 'Vercel', projects: ["Let's Pepper", 'Nino Labs'] },
+	{ from: 'Astro', to: 'Vercel', projects: ['Signal Dispatch'] },
+	{ from: 'Astro', to: 'OpenAI / OpenRouter', projects: ['Signal Dispatch'] },
+	{ from: 'Supabase', to: 'Google AI (Gemini)', projects: ['Gallery'] },
+	{ from: 'Supabase', to: 'Vercel AI SDK', projects: ['Gallery', 'AI Analyst Academy'] },
+	{ from: 'Supabase', to: 'Cloudflare', projects: ['Gallery'] },
+	{ from: 'Vercel', to: 'Cloudflare', projects: ['Gallery', 'ninochavez.co'] },
+	{ from: 'Stripe', to: 'Supabase', projects: ['Rally HQ'] },
+	{ from: 'OpenAI / OpenRouter', to: 'Vercel AI SDK', projects: ['Signal Dispatch'] },
+	{ from: 'Anthropic (Claude)', to: 'Vercel AI SDK', projects: ['Nino Labs'] },
+	{ from: 'Tailwind CSS v3', to: 'Next.js', projects: ["Let's Pepper"] },
+	{ from: 'Tailwind CSS v3', to: 'Vercel', projects: ["Let's Pepper", 'Nino Labs'] },
+];

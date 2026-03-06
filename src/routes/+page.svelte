@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { externalProjects, internalPages } from '$lib/data/projects';
+	import { depthOfField } from '$lib/actions/depthOfField';
 
 	let mounted = $state(false);
 	let glitchActive = $state(false);
@@ -145,6 +146,7 @@
 						target="_blank"
 						rel="noopener noreferrer"
 						class="group relative overflow-hidden rounded-xl border border-elevated bg-abyss/50 p-5 backdrop-blur-sm transition-all duration-300 hover:border-whisper/30 hover:shadow-lg"
+					use:depthOfField={{ name: project.name, group: 'shipped' }}
 					>
 						<div class="mb-2 flex items-center justify-between">
 							<h3 class="font-display text-base font-semibold text-chalk transition-colors group-hover:text-neon-cyan">
